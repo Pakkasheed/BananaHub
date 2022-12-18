@@ -1260,7 +1260,7 @@ function setwatermarktime()
     local hr = math.floor(dgt/(60^2))%24
     local min = math.floor(dgt/(60^1))%60
     local sec = math.floor(dgt/(60^0))%60
-    Library:SetWatermark("Banana Hub Pc Editon 2.0 | "..hr.." Hour(s) "..min.." Minute(s) "..sec.." Second(s) ")
+    Library:SetWatermark("Banana Hub Pc Editon 2.0 | "..hr.." Hour(s) "..min.." Minute(s) "..sec.." Second(s)")
  end
  
  spawn(function()
@@ -2210,14 +2210,13 @@ end)
 spawn(function()
 while wait() do
     if AutoFarm then
-        pcall(function()
+    pcall(function()
         CheckQuest()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
 TP(CFrameQuest)
-if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
-wait(1)
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",QuestName,LevelQuest)
+if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
 wait(.5)
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",QuestName,LevelQuest)
 TP(CFrameMon)
 end
 elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
