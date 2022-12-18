@@ -401,6 +401,9 @@ function CheckQuest()
 
 			CFrameQuest = CFrame.new(61123, 19, 1569)
 			VectorQuest = Vector3.new(61123, 19, 1569)
+			if (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
+			end
 		elseif MyLevel == 400 or MyLevel <= 449 then -- Fishman Commando
 			LevelFarm = 19
 
@@ -415,6 +418,9 @@ function CheckQuest()
 
 			CFrameQuest = CFrame.new(61123, 19, 1569)
 			VectorQuest = Vector3.new(61123, 19, 1569)
+						if (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(61163.8515625, 11.6796875, 1819.7841796875))
+			end
 		elseif MyLevel == 450 or MyLevel <= 474 then -- God's Guards
 			LevelFarm = 20
 
@@ -429,6 +435,9 @@ function CheckQuest()
 
 			CFrameQuest = CFrame.new(-4722, 845, -1954)
 			VectorQuest = Vector3.new(-4722, 846, -1954)
+			if AutoFarm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+					end
 		elseif MyLevel == 475 or MyLevel <= 524 then -- Shandas
 			LevelFarm = 21
 
@@ -443,6 +452,9 @@ function CheckQuest()
 
 			CFrameQuest = CFrame.new(-7862, 5546, -380)
 			VectorQuest = Vector3.new(-7862, 5546, -380)
+			if AutoFarm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 3000 then
+						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-4607.82275, 872.54248, -1667.55688))
+					end
 		elseif MyLevel == 525 or MyLevel <= 549 then -- Royal Squad
 			LevelFarm = 22
 
@@ -2232,13 +2244,13 @@ elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == tr
                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,30,0)
                         if v.Humanoid.Health > HealthMin then
                     Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude 
-                    Speed = 300 
+                    Speed = 550 
                     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
                     tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,30,0)})
                     tween:Play() 
                     else
                     Distance = (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude 
-                    Speed = 300 
+                    Speed = 550 
                     tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
                     tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,30,0)})
                     tween:Play()
