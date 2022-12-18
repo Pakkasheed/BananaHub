@@ -2213,11 +2213,10 @@ while wait() do
     pcall(function()
         CheckQuest()
 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-TP(CFrameQuest)
-if (CFrameQuest.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+TP(CFrameMon)
+if (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
 wait(.5)
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",QuestName,LevelQuest)
-TP(CFrameMon)
 end
 elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
     if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,NameMon) then
